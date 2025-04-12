@@ -22,7 +22,9 @@ function AnimeDetailPage() {
   const handleGenerateSummary = async () => {
     if (!selectedEpisode) return;
     setSummaryLoading(true);
-    const prompt = `Summarize episode ${selectedEpisode} of the anime "${anime.title.english || anime.title.romaji}" in about ${summaryLength} words.`;
+    const prompt = `Summarize episode ${selectedEpisode} of the anime "${anime.title.english || anime.title.romaji}" in about ${summaryLength} words while taking care 
+of the following things: cinematic worldbuilding intro, story-like narrative flow, emotional weight and atmosphere, third person narrator tone, focus on building hype, drama and mystery, smooth transitions from past to present to action, 
+and zero summary vibe, make it be immersive.`;
     const generated = await generateAISummary(prompt);
     setSummary(generated);
     setSummaryLoading(false);
@@ -91,4 +93,3 @@ function AnimeDetailPage() {
 }
 
 export default AnimeDetailPage;
-
