@@ -26,7 +26,7 @@ function AnimeDetailPage() {
     correct episode, - Include all important events in order.  
 - Mention all key actions and scenes that happened.  
 - Include important dialogues (short direct quotes only).  
-- Do not skip or change any scene from the original chapter.  
+- Do not skip or change any scene from the original episode.  
 - No extra story writing or narrative.  
 - This summary will be used for writing a cinematic script later.
 
