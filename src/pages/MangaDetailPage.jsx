@@ -22,21 +22,9 @@ function MangaDetailPage() {
   const handleGenerateSummary = async () => {
     if (!selectedVolume) return;
     setSummaryLoading(true);
-    const prompt = `Summarize chapter ${selectedVolume} of the manga "${manga.title.english || manga.title.romaji}" in about ${summaryLength} words length while taking care that what you say is 
-    actually the same chapter, - Include all important events in order.  
-- Mention all key actions and scenes that happened.  
-- Include important dialogues (short direct quotes only).  
-- Do not skip or change any scene from the original chapter.  
-- No extra story writing or narrative.  
-- This summary will be used for writing a cinematic script later.
-
-Output Format Example:
-
-- Scene 1: {What happens}  
-- Character does {Action}  
-- Dialogue: "..."  
-- Scene 2: {Next Event}  
-- Ending: {Final scene of the chapter}.`;
+    const prompt = `Summarize chapter ${selectedVolume} of the manga "${manga.title.english || manga.title.romaji}" in about ${summaryLength} words length, verify that you are giving accurate 
+    chapter information, give a cinematic worldbuilding intro, story-like narrative flow, emotional weight and measure, focus on characters' dialogues and their weight, third person narrator 
+    tone, focus on building hype, drama and mystery, and ensure smooth transitions from past > present > action all while making sure there is no summary vibe.`;
     const generated = await generateAISummary(prompt);
     setSummary(generated);
     setSummaryLoading(false);
