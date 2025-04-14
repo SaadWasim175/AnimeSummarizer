@@ -22,21 +22,9 @@ function AnimeDetailPage() {
   const handleGenerateSummary = async () => {
     if (!selectedEpisode) return;
     setSummaryLoading(true);
-    const prompt = `Summarize episode ${selectedEpisode} of the anime "${anime.title.english || anime.title.romaji}" in about ${summaryLength} words while making sure that what you say is the 
-    correct episode, - Include all important events in order.  
-- Mention all key actions and scenes that happened.  
-- Include important dialogues (short direct quotes only).  
-- Do not skip or change any scene from the original episode.  
-- No extra story writing or narrative.  
-- This summary will be used for writing a cinematic script later.
-
-Output Format Example:
-
-- Scene 1: {What happens}  
-- Character does {Action}  
-- Dialogue: "..."  
-- Scene 2: {Next Event}  
-- Ending: {Final scene of the chapter}.`;
+    const prompt = `Summarize episode ${selectedEpisode} of the anime "${anime.title.english || anime.title.romaji}" in about ${summaryLength} words length verify that you are giving accurate 
+    episode information, make a heading of the episode name, give a cinematic worldbuilding intro, story-like narrative flow, emotional weight and measure, focus on characters' dialogues and their weight, third person narrator 
+    tone, focus on building hype, drama and mystery, and ensure smooth transitions from past > present > action all while making sure there is no summary vibe..`;
     const generated = await generateAISummary(prompt);
     setSummary(generated);
     setSummaryLoading(false);
