@@ -23,7 +23,7 @@ function MangaDetailPage() {
     if (!selectedVolume) return;
     setSummaryLoading(true);
     const prompt = `Summarize chapter ${selectedVolume} of the manga "${manga.title.english || manga.title.romaji}" in about ${summaryLength} words length, verify that you are giving accurate 
-    chapter information, give a cinematic worldbuilding intro, story-like narrative flow, emotional weight and measure, focus on characters' dialogues and their weight, third person narrator 
+    chapter information, give chapter name heading, give a cinematic worldbuilding intro, story-like narrative flow, emotional weight and measure, focus on characters' dialogues and their weight, third person narrator 
     tone, focus on building hype, drama and mystery, and ensure smooth transitions from past > present > action all while making sure there is no summary vibe.`;
     const generated = await generateAISummary(prompt);
     setSummary(generated);
